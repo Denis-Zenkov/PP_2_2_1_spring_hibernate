@@ -29,10 +29,10 @@ public class MainApp {
 //         System.out.println("Email = "+user.getEmail());
 //         System.out.println();
 //      }
-//      CarService carService = context.getBean(CarService.class);
-//      carService.add(new Car("R1", 1000));
-//      carService.add(new Car("R6", 666));
-//      carService.add(new Car("XJ6", 600));
+      CarService carService = context.getBean(CarService.class);
+      carService.add(new Car("R1", 1000));
+      carService.add(new Car("R6", 666));
+      carService.add(new Car("XJ6", 600));
       User user = new User();
       Car car = new Car();
 
