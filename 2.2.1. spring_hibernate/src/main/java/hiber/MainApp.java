@@ -3,7 +3,6 @@ package hiber;
 import hiber.config.AppConfig;
 import hiber.model.Car;
 import hiber.model.User;
-import hiber.service.CarService;
 import hiber.service.UserService;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -34,15 +33,7 @@ public class MainApp {
 //         System.out.println("Car = " + user.getUserCar());
 //         System.out.println();
 //      }
-
-
-      LocalSessionFactoryBean sessionFactory = new AppConfig().getSessionFactory();
-      Session session = sessionFactory.getObject().openSession();
-      session.beginTransaction();
-      session.createQuery("FROM User");
-      session.getTransaction().commit();
-      session.close();
-
+      System.out.println(userService.returnUserByCar());
 
 
       context.close();

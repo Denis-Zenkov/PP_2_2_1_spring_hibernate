@@ -27,7 +27,6 @@ import java.util.Properties;
 public class AppConfig{
 
    @Autowired
-//   @Value("${classpath:db.properties}")
    private Environment env;
 
 
