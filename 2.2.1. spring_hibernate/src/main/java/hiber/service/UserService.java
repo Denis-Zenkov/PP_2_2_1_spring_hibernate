@@ -11,5 +11,5 @@ import java.util.List;
 public interface UserService {
     void add(User user);
     List<User> listUsers();
-    User returnUserByCar();
+    User returnUserByCar(String model, int series);
 }
