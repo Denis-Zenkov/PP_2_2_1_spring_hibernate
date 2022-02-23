@@ -17,6 +17,7 @@ public class Car {
     private int series;
 
     @OneToOne(mappedBy = "userCar", cascade = CascadeType.ALL)
+    @PrimaryKeyJoinColumn
     private User user;
 
     public Car() {
@@ -25,7 +26,6 @@ public class Car {
     public Car(String model, int series) {
         this.model = model;
         this.series = series;
-
     }
 
     public String getModel() {

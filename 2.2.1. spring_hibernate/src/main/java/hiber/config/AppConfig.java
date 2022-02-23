@@ -4,6 +4,7 @@ import hiber.model.Car;
 import hiber.model.User;
 import hiber.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -20,13 +21,15 @@ import java.util.Properties;
 
 
 @Configuration
-@PropertySource("classpath:db.properties")
+@PropertySource(value = "classpath:db.properties")
 @EnableTransactionManagement
 @ComponentScan(value = "hiber")
-public class AppConfig {
+public class AppConfig{
 
    @Autowired
+//   @Value("${classpath:db.properties}")
    private Environment env;
+
 
    @Bean
    public DataSource getDataSource() {
@@ -58,6 +61,5 @@ public class AppConfig {
       transactionManager.setSessionFactory(getSessionFactory().getObject());
       return transactionManager;
    }
-
 
 }
